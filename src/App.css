@@ -1,0 +1,205 @@
+/* =============================================
+   App Layout & Responsive Design
+   ============================================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px 40px;
+  gap: 32px;
+}
+
+/* --- Header --- */
+
+.app-header {
+  text-align: center;
+}
+
+.app-title {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #87CEEB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.title-emoji {
+  -webkit-text-fill-color: initial;
+  font-size: 0.9em;
+}
+
+.app-subtitle {
+  margin-top: 8px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+}
+
+/* --- Stage Section --- */
+
+.stage-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* --- Controls Section --- */
+
+.controls-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Footer --- */
+
+.app-footer {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* =============================================
+   Responsive Design
+   ============================================= */
+
+/* Tablet: 768px ~ */
+@media (min-width: 768px) {
+  .app {
+    padding: 48px 32px 48px;
+    gap: 40px;
+  }
+
+  .cat-image {
+    width: 220px;
+  }
+
+  .cat-stage {
+    height: 440px;
+  }
+
+  .controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 40px;
+    max-width: 680px;
+  }
+
+  .control-group {
+    min-width: 200px;
+  }
+}
+
+/* Desktop: 1024px ~ */
+@media (min-width: 1024px) {
+  .app {
+    padding: 60px 48px 60px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .app-header {
+    width: 100%;
+  }
+
+  .stage-section {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  .controls-section {
+    flex: 0 0 auto;
+    width: auto;
+    align-self: center;
+  }
+
+  .app-footer {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cat-image {
+    width: 240px;
+  }
+
+  .cat-stage {
+    height: 460px;
+  }
+}
+
+/* Mobile small: ~ 480px */
+@media (max-width: 480px) {
+  .app {
+    padding: 24px 12px 32px;
+    gap: 24px;
+  }
+
+  .cat-image {
+    width: 150px;
+  }
+
+  .cat-stage {
+    height: 320px;
+  }
+
+  .controls {
+    padding: 18px 16px;
+    gap: 16px;
+  }
+
+  .btn-dance,
+  .btn-speed {
+    min-width: 68px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Touch device: larger tap targets */
+@media (pointer: coarse) {
+  .btn-toggle {
+    padding: 16px 44px;
+    min-height: 52px;
+  }
+
+  .btn-dance,
+  .btn-speed {
+    min-height: 48px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .dance-bounce,
+  .dance-spin,
+  .dance-wave,
+  .dance-wiggle {
+    animation: none;
+  }
+
+  .note {
+    animation: none;
+    display: none;
+  }
+
+  .spotlight {
+    animation: none;
+  }
+}
